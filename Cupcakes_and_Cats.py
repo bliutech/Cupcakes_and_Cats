@@ -41,17 +41,17 @@ image_path = os.path.join(current_path, 'Images') # The image folder path
 sound_path = os.path.join(current_path, 'Sounds') # The sound folder path
 
 #paths to all image files
-cat1 = pygame.image.load(os.path.join(image_path, 'CatI.png'))
-cat2 = pygame.image.load(os.path.join(image_path, 'CatII.png'))
-cat3 = pygame.image.load(os.path.join(image_path, 'CatIII.png'))
-cat4 = pygame.image.load(os.path.join(image_path, 'CatIV.png'))
-cupcake1 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeI.png'))
-cupcake2 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeII.png'))
-cupcake3 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIII.png'))
-cupcake4 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIV.png'))
-cupcake5 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeV.png'))
-pixelHeart = pygame.image.load(os.path.join(image_path, 'Pixel_Heart.png'))
-candyBackground = os.path.join(image_path, 'Candy_Background.jpg')
+cat1 = pygame.image.load(os.path.join(image_path, 'CatI.png')).convert()
+cat2 = pygame.image.load(os.path.join(image_path, 'CatII.png')).convert()
+cat3 = pygame.image.load(os.path.join(image_path, 'CatIII.png')).convert()
+cat4 = pygame.image.load(os.path.join(image_path, 'CatIV.png')).convert()
+cupcake1 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeI.png')).convert()
+cupcake2 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeII.png')).convert()
+cupcake3 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIII.png')).convert()
+cupcake4 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIV.png')).convert()
+cupcake5 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeV.png')).convert()
+pixelHeart = pygame.image.load(os.path.join(image_path, 'Pixel_Heart.png')).convert()
+candyBackground = os.path.join(image_path, 'Candy_Background.jpg').convert()
 
 #paths to all sound files
 gameOver = pygame.mixer.Sound(os.path.join(sound_path, 'gameover.wav'))
