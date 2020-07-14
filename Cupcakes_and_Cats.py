@@ -42,24 +42,23 @@ sound_path = os.path.join(current_path, 'Sounds') # The sound folder path
 
 #paths to all image files
 cat1 = pygame.image.load(os.path.join(image_path, 'CatI.png'))
-cat2 = '/Cupcakes_and_Cats/Images/CatII.png'
-cat3 = '/Cupcakes_and_Cats/Images/BensonCatIII.png'
-cat4 = '/Cupcakes_and_Cats/Images/BensonCatIV.png'
-cupcake1 = 'Cupcakes_and_Cats/Images/BensonCupcakeI.png'
-cupcake2 = 'Cupcakes_and_Cats/Images/BensonCupcakeII.png'
-cupcake3 = 'Cupcakes_and_Cats/Images/BensonCupcakeIII.png'
-cupcake4 = 'Cupcakes_and_Cats/Images/BensonCupcakeIV.png'
-cupcake5 = 'Cupcakes_and_Cats/Images/BensonCupcakeV.png'
-pixelHeart = 'Cupcakes_and_Cats/Images/Pixel_Heart.png'
-candyBackground = 'Cupcakes_and_Cats/Images/Candy_Background.jpg'
+cat2 = pygame.image.load(os.path.join(image_path, 'CatII.png'))
+cat3 = pygame.image.load(os.path.join(image_path, 'CatIII.png'))
+cat4 = pygame.image.load(os.path.join(image_path, 'CatIV.png'))
+cupcake1 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeI.png'))
+cupcake2 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeII.png'))
+cupcake3 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIII.png'))
+cupcake4 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIV.png'))
+cupcake5 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeV.png'))
+pixelHeart = pygame.image.load(os.path.join(image_path, 'Pixel_Heart.png'))
+candyBackground = os.path.join(image_path, 'Candy_Background.jpg')
 
 #paths to all sound files
-gameOver = 'Cupcakes_and_Cats/Sounds/gameover.wav'
-meow = 'Cupcakes_and_Cats/Sounds/Kitten_Meow-SoundBible.com-1295572573.wav'
-backgroundMusic = 'Cupcakes_and_Cats/Sounds/Winding-Down.wav'
-splats = 'Cupcakes_and_Cats/Sounds/Splat-SoundBible.com-1826190667.wav'
-coinSound = 'Cupcakes_and_Cats/Sounds/Mario-coin-sound.wav'
-
+gameOver = pygame.mixer.Sound(os.path.join(sound_path, 'gameover.wav'))
+meow = pygame.mixer.Sound(os.path.join(sound_path, 'Kitten_Meow-SoundBible.com-1295572573.wav'))
+splats = pygame.mixer.Sound(os.path.join(sound_path, 'Splat-SoundBible.com-1826190667.wav'))
+coinSound = pygame.mixer.Sound(os.path.join(sound_path, 'Mario-coin-sound.wav'))
+backgroundMusic = os.path.join(sound_path, 'Winding-Down.wav')
 
 
 #function definitions
@@ -104,13 +103,13 @@ class Background(pygame.sprite.Sprite):
 def playerImage(number):
    while True:
        if number == 0 and Player_Touch == False:
-               return pygame.transform.scale(pygame.image.load(cat3),(PLAYERSIZE,PLAYERSIZE))
+               return pygame.transform.scale(cat3,(PLAYERSIZE,PLAYERSIZE))
        if  number == 1 and Player_Touch == False:
-           return pygame.transform.scale(pygame.image.load(cat1),(PLAYERSIZE,PLAYERSIZE))
+           return pygame.transform.scale(cat1,(PLAYERSIZE,PLAYERSIZE))
        if number == 0 and Player_Touch == True:
-           return pygame.transform.scale(pygame.image.load(cat2),(PLAYERSIZE,PLAYERSIZE))
+           return pygame.transform.scale(cat2,(PLAYERSIZE,PLAYERSIZE))
        if number == 1 and Player_Touch == True:
-           return pygame.transform.scale(pygame.image.load(cat4),(PLAYERSIZE,PLAYERSIZE))
+           return pygame.transform.scale(cat4,(PLAYERSIZE,PLAYERSIZE))
        pygame.display.update()
 
 
@@ -121,22 +120,22 @@ playerRect = pygame.transform.scale((cat1),(PLAYERSIZE,PLAYERSIZE)).get_rect()
 def CupcakeImage(number):
     while True:
         if number == 0:
-            return pygame.image.load(cupcake1)
+            return cupcake1
 
         if number == 1:
-            return pygame.image.load(cupcake2)
+            return cupcake2
 
         if number == 2:
-            return pygame.image.load(cupcake3)
+            return cupcake3
         
         if number == 3:
-            return pygame.image.load(cupcake4)
+            return cupcake4
 
         if number == 4:
-            return pygame.image.load(cupcake5)
+            return cupcake5
 
 
-GameHeart = pygame.transform.scale(pygame.image.load(pixelHeart), (30,30))
+GameHeart = pygame.transform.scale(pixelHeart, (30,30))
 
 
 
@@ -148,13 +147,13 @@ font2 = pygame.font.SysFont(None,49)
 
 # set up sounds
 pygame.mixer.init(44100, -16,1,2048)
-gameOverSound = pygame.mixer.Sound(gameOver)
+gameOverSound = gameOver
 KatMeow = pygame.mixer.Sound(meow)
 KatMeow.set_volume(0.5)
 pygame.mixer.music.load(backgroundMusic)
-Splat = pygame.mixer.Sound(splats)
+Splat = splats
 Splat.set_volume(0.5)
-Level_Up = pygame.mixer.Sound(coinSound)
+Level_Up = coinSound
 Level_Up.set_volume(0.25)
 
 
