@@ -9,10 +9,11 @@
 
 #Need to work on fixing the formating and font of the text as well as the home page. Maybe make an ending screen.
 
-
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame, random, sys, time
 from pygame.locals import *
-import os
+#import os
 
 WINDOWWIDTH = 1153
 WINDOWHEIGHT = 692
@@ -136,7 +137,7 @@ GameHeart = pygame.transform.scale(pixelHeart, (30,30))
 
 
 
-#pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT),pygame.FULLSCREEN)
+pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT),pygame.FULLSCREEN)
 # set up fonts
 font = pygame.font.SysFont(None, 48)
 font2 = pygame.font.SysFont(None,49)
