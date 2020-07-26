@@ -36,22 +36,9 @@ pygame.mouse.set_visible(False)
 
 #os for organizing paths
 current_path = os.path.dirname(__file__) # Where your .py file is located
-#resource_path = os.path.join(current_path, 'Cupcakes_and_Cats') # The resource folder path
+#resource_path = os.path.join(current_path, "Cupcakes_and_Cats") # The resource folder path
 image_path = os.path.join(current_path, 'Images') # The image folder path
 sound_path = os.path.join(current_path, 'Sounds') # The sound folder path
-
-#paths to all image files
-cat1 = pygame.image.load(os.path.join(image_path, 'CatI.png')).convert()
-cat2 = pygame.image.load(os.path.join(image_path, 'CatII.png')).convert()
-cat3 = pygame.image.load(os.path.join(image_path, 'CatIII.png')).convert()
-cat4 = pygame.image.load(os.path.join(image_path, 'CatIV.png')).convert()
-cupcake1 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeI.png')).convert()
-cupcake2 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeII.png')).convert()
-cupcake3 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIII.png')).convert()
-cupcake4 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIV.png')).convert()
-cupcake5 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeV.png')).convert()
-pixelHeart = pygame.image.load(os.path.join(image_path, 'Pixel_Heart.png')).convert()
-candyBackground = os.path.join(image_path, 'Candy_Background.jpg').convert()
 
 #paths to all sound files
 gameOver = pygame.mixer.Sound(os.path.join(sound_path, 'gameover.wav'))
@@ -60,8 +47,18 @@ splats = pygame.mixer.Sound(os.path.join(sound_path, 'Splat-SoundBible.com-18261
 coinSound = pygame.mixer.Sound(os.path.join(sound_path, 'Mario-coin-sound.wav'))
 backgroundMusic = os.path.join(sound_path, 'Winding-Down.wav')
 
-
-#function definitions
+#paths to all image files
+cat1 = pygame.image.load(os.path.join(image_path, "BensonCatI.png")).convert_alpha()
+cat2 = pygame.image.load(os.path.join(image_path, 'BensonCatII.png')).convert_alpha()
+cat3 = pygame.image.load(os.path.join(image_path, 'BensonCatIII.png')).convert_alpha()
+cat4 = pygame.image.load(os.path.join(image_path, 'BensonCatIV.png')).convert_alpha()
+cupcake1 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeI.png')).convert_alpha()
+cupcake2 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeII.png')).convert_alpha()
+cupcake3 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIII.png')).convert_alpha()
+cupcake4 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIV.png')).convert_alpha()
+cupcake5 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeV.png')).convert_alpha()
+pixelHeart = pygame.image.load(os.path.join(image_path, 'Pixel_Heart.png')).convert_alpha()
+candyBackground = os.path.join(image_path, 'Candy_Background.jpg')
 
 def terminate():
     pygame.quit()
