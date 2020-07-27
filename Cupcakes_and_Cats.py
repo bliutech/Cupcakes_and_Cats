@@ -9,11 +9,23 @@
 
 #Need to work on fixing the formating and font of the text as well as the home page. Maybe make an ending screen.
 
+#import sys
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame, random, sys, time
 from pygame.locals import *
 #import os
+
+# If the code is frozen, use this path:
+if getattr(sys, 'frozen', False):
+    #current_path = sys._MEIPASS
+    current_path = os.path.dirname(__file__)
+    print(os.path.dirname)
+# If it's not use the path we're on now
+else:
+    current_path = os.path.dirname(__file__)
+    print(current_path)
+#current_path = os.path.dirname(__file__)
 
 WINDOWWIDTH = 1153
 WINDOWHEIGHT = 692
@@ -36,7 +48,7 @@ pygame.display.set_caption('Cupcakes & Cats')
 pygame.mouse.set_visible(False)
 
 #os for organizing paths
-current_path = os.path.dirname(__file__) # Where your .py file is located
+#current_path = os.path.dirname(__file__) # Where your .py file is located
 #resource_path = os.path.join(current_path, "Cupcakes_and_Cats") # The resource folder path
 image_path = os.path.join(current_path, 'Images') # The image folder path
 sound_path = os.path.join(current_path, 'Sounds') # The sound folder path
@@ -49,7 +61,7 @@ coinSound = pygame.mixer.Sound(os.path.join(sound_path, 'Mario-coin-sound.wav'))
 backgroundMusic = os.path.join(sound_path, 'Winding-Down.wav')
 
 #paths to all image files
-cat1 = pygame.image.load(os.path.join(image_path, "BensonCatI.png")).convert_alpha()
+cat1 = pygame.image.load(os.path.join(image_path, 'BensonCatI.png')).convert_alpha()
 cat2 = pygame.image.load(os.path.join(image_path, 'BensonCatII.png')).convert_alpha()
 cat3 = pygame.image.load(os.path.join(image_path, 'BensonCatIII.png')).convert_alpha()
 cat4 = pygame.image.load(os.path.join(image_path, 'BensonCatIV.png')).convert_alpha()
@@ -59,7 +71,7 @@ cupcake3 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIII.png')).c
 cupcake4 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIV.png')).convert_alpha()
 cupcake5 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeV.png')).convert_alpha()
 pixelHeart = pygame.image.load(os.path.join(image_path, 'Pixel_Heart.png')).convert_alpha()
-candyBackground = os.path.join(image_path, 'Candy_Background.jpg')
+candyBackground = os.path.join(image_path, 'Candy_Background.png')
 
 def terminate():
     pygame.quit()
@@ -137,7 +149,7 @@ GameHeart = pygame.transform.scale(pixelHeart, (30,30))
 
 
 
-pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT),pygame.FULLSCREEN)
+#pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT),pygame.FULLSCREEN)
 # set up fonts
 font = pygame.font.SysFont(None, 48)
 font2 = pygame.font.SysFont(None,49)
@@ -336,8 +348,8 @@ while True:
 
         if death():
             if score > topScore:
+                gameOverSound.play()
                 topScore = score
-
             break
 
         mainClock.tick(FPS)
@@ -347,11 +359,8 @@ while True:
 
     # Stop the game and show the "Game Over" screen.
     pygame.mixer.music.stop()
-    gameOverSound.play()
-    
     drawText('GAME OVER', font, font2, windowSurface,(WINDOWWIDTH / 2)- 100, (WINDOWHEIGHT / 3) + 50)
     drawText('Press a key to play again.', font, font2, windowSurface, (WINDOWWIDTH / 2) - 190, (WINDOWHEIGHT / 3) + 100)
     pygame.display.update()
-    waitForPlayerToPressKey()
-
     gameOverSound.stop()
+    waitForPlayerToPressKey()   
