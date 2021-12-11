@@ -1,20 +1,13 @@
-#Created by Benson Liu
-#Game Name: Cupcakes & Cats (working title)
+# Created by Benson Liu
+# Game Name: Cupcakes & Cats
 
-#Special thanks to Gwyneth Butler for the game sprites artwork (Cupcakes 1 through 5 and the four catsprites)
-#"Winding Down" Background music taken from Soundimage.org
+# Special thanks to Gwyneth Butler for the game sprites artwork (Cupcakes 1 through 5 and the four catsprites)
+# "Winding Down" Background music taken from Soundimage.org
 
-#Max Level So far - Level 10
-
-
-#Need to work on fixing the formating and font of the text as well as the home page. Maybe make an ending screen.
-
-#import sys
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame, random, sys, time
 from pygame.locals import *
-#import os
 
 # If the code is frozen, use this path:
 if getattr(sys, 'frozen', False):
@@ -61,17 +54,17 @@ coinSound = pygame.mixer.Sound(os.path.join(sound_path, 'Mario-coin-sound.wav'))
 backgroundMusic = os.path.join(sound_path, 'Winding-Down.wav')
 
 #paths to all image files
-cat1 = pygame.image.load(os.path.join(image_path, 'BensonCatI.png')).convert_alpha()
-cat2 = pygame.image.load(os.path.join(image_path, 'BensonCatII.png')).convert_alpha()
-cat3 = pygame.image.load(os.path.join(image_path, 'BensonCatIII.png')).convert_alpha()
-cat4 = pygame.image.load(os.path.join(image_path, 'BensonCatIV.png')).convert_alpha()
-cupcake1 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeI.png')).convert_alpha()
-cupcake2 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeII.png')).convert_alpha()
-cupcake3 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIII.png')).convert_alpha()
-cupcake4 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeIV.png')).convert_alpha()
-cupcake5 = pygame.image.load(os.path.join(image_path, 'BensonCupcakeV.png')).convert_alpha()
+cat1 = pygame.image.load(os.path.join(image_path, 'CatI.png')).convert_alpha()
+cat2 = pygame.image.load(os.path.join(image_path, 'CatII.png')).convert_alpha()
+cat3 = pygame.image.load(os.path.join(image_path, 'CatIII.png')).convert_alpha()
+cat4 = pygame.image.load(os.path.join(image_path, 'CatIV.png')).convert_alpha()
+cupcake1 = pygame.image.load(os.path.join(image_path, 'CupcakeI.png')).convert_alpha()
+cupcake2 = pygame.image.load(os.path.join(image_path, 'CupcakeII.png')).convert_alpha()
+cupcake3 = pygame.image.load(os.path.join(image_path, 'CupcakeIII.png')).convert_alpha()
+cupcake4 = pygame.image.load(os.path.join(image_path, 'CupcakeIV.png')).convert_alpha()
+cupcake5 = pygame.image.load(os.path.join(image_path, 'CupcakeV.png')).convert_alpha()
 pixelHeart = pygame.image.load(os.path.join(image_path, 'Pixel_Heart.png')).convert_alpha()
-candyBackground = os.path.join(image_path, 'Candy_Background.png')
+candyBackground = os.path.join(image_path, 'Candy_Background.jpg')
 
 def terminate():
     pygame.quit()
@@ -122,8 +115,6 @@ def playerImage(number):
            return pygame.transform.scale(cat4,(PLAYERSIZE,PLAYERSIZE))
        pygame.display.update()
 
-
-
 playerRect = pygame.transform.scale((cat1),(PLAYERSIZE,PLAYERSIZE)).get_rect()
 
 #Have multiple cupcakes so need different cupcake image
@@ -144,16 +135,14 @@ def CupcakeImage(number):
         if number == 4:
             return cupcake5
 
-
 GameHeart = pygame.transform.scale(pixelHeart, (30,30))
 
-
-
+# full screen mode
 #pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT),pygame.FULLSCREEN)
+
 # set up fonts
 font = pygame.font.SysFont(None, 48)
 font2 = pygame.font.SysFont(None,49)
-
 
 # set up sounds
 pygame.mixer.init(44100, -16,1,2048)
@@ -166,19 +155,11 @@ Splat.set_volume(0.5)
 Level_Up = coinSound
 Level_Up.set_volume(0.25)
 
-
-
 #Background for the game
 BackGround = Background(candyBackground, [0,0] , (WINDOWWIDTH,WINDOWHEIGHT))
 
-
 #Start screen background
 StartBackGround = Background(candyBackground, [0,0] , (WINDOWWIDTH,WINDOWHEIGHT))
-
-
-
-
-
 
 # show the "Start" screen
 windowSurface.blit(StartBackGround.image,StartBackGround.rect)
@@ -189,10 +170,7 @@ drawText('Press a key to start.', font, font2, windowSurface, (WINDOWWIDTH / 2) 
 pygame.display.update()
 waitForPlayerToPressKey()
 
-
-
 topScore = 0
-
 
 while True:
     #Set up the start of the game
@@ -214,7 +192,6 @@ while True:
         CupcakeMAXSPEED = 2*LEVEL + 2
         ADDNEWCupcakeRATE = 51 - 5*LEVEL
 
-
         #movement for lopp for all types of movement
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -228,8 +205,6 @@ while True:
                     moveLeft = False
                     moveRight = True
 
-
-
             if event.type == KEYUP:
                 if event.key == K_LEFT or event.key == ord('a'):
                     moveLeft = False
@@ -237,7 +212,6 @@ while True:
                     moveRight = False
                 if event.key == K_ESCAPE:
                         terminate()
-
 
             if event.type == MOUSEMOTION:
                 # If the mouse moves, move the player where the cursor is.
@@ -277,17 +251,13 @@ while True:
         if moveRight and playerRect.right < WINDOWWIDTH:
             playerRect.move_ip(PLAYERMOVERATE, 0)
 
-        
-
         # Move the mouse cursor to match the player.
         pygame.mouse.set_pos(playerRect.centerx, playerRect.centery)
-
 
         # Move the Cupcakes down.
         for b in Cupcakes:
                 b['rect'].move_ip(0, b['speed'])
 
-        
         # Delete baddies that have fallen past the bottom.
         for b in Cupcakes[:]:
             if b['rect'].top > WINDOWHEIGHT:
@@ -296,12 +266,9 @@ while True:
                 LIVES -= 1
                 Cupcakes.remove(b)
 
-
-
         # Draw the game world on the window.
         windowSurface.fill([255, 255, 255]) #Don't think this is neccessary
         windowSurface.blit(BackGround.image, BackGround.rect)
-    
 
         # Draw the score and top score.
         drawText('Score: %s' % (score), font, font2, windowSurface, 10, 0)
@@ -338,8 +305,6 @@ while True:
                 Player_Which = 0
                 Player_cycle = 0
 
-
-
         # Draw each baddie
         for b in Cupcakes:
             windowSurface.blit(b['surface'], b['rect'])
@@ -348,7 +313,6 @@ while True:
 
         if death():
             if score > topScore:
-                gameOverSound.play()
                 topScore = score
             break
 
@@ -359,8 +323,10 @@ while True:
 
     # Stop the game and show the "Game Over" screen.
     pygame.mixer.music.stop()
+    gameOverSound.play()
     drawText('GAME OVER', font, font2, windowSurface,(WINDOWWIDTH / 2)- 100, (WINDOWHEIGHT / 3) + 50)
     drawText('Press a key to play again.', font, font2, windowSurface, (WINDOWWIDTH / 2) - 190, (WINDOWHEIGHT / 3) + 100)
     pygame.display.update()
+    time.sleep(5)
     gameOverSound.stop()
     waitForPlayerToPressKey()   
