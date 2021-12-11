@@ -1,9 +1,6 @@
 # Created by Benson Liu
 # Game Name: Cupcakes & Cats
 
-# Special thanks to Gwyneth Butler for the game sprites artwork (Cupcakes 1 through 5 and the four catsprites)
-# "Winding Down" Background music taken from Soundimage.org
-
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame, random, sys, time
@@ -11,14 +8,12 @@ from pygame.locals import *
 
 # If the code is frozen, use this path:
 if getattr(sys, 'frozen', False):
-    #current_path = sys._MEIPASS
     current_path = os.path.dirname(__file__)
     print(os.path.dirname)
 # If it's not use the path we're on now
 else:
     current_path = os.path.dirname(__file__)
     print(current_path)
-#current_path = os.path.dirname(__file__)
 
 WINDOWWIDTH = 1153
 WINDOWHEIGHT = 692
