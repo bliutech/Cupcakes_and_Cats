@@ -9,9 +9,9 @@ Created by Benson Liu
 Year: 2017
 
 ## Narrative
-```
+
 DAVE is just your typical cat living his ordinary life until suddenly he is transported to the fantasy world of CANDY LAND. In CANDY LAND, the world is continuously showered by rains of CUPCAKES that destroy the land. The people of CANDY LAND turn to the new arrival of DAVE to try and save them. Can you help DAVE catch all of the CUPCAKES before they destroy all of CANDY LAND?
-```
+
 
 ## Gameplay
 [update directions]
