@@ -1,4 +1,6 @@
-# Cupcakes & Cats
+# 🐈 Cupcakes & Cats 🧁 
+
+![Cupcakes & Cats Demo](./docs/demo.jpg)
 
 Cupcakes & Cats is a fun game featuring a cat... catching cupcakes! The game was developed using Python and the Pygame engine. Cupcakes & Cats was originally developed by Benson Liu for the final project of a STEM class he took as a freshman in high school.
 
