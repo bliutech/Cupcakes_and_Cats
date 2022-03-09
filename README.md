@@ -10,21 +10,20 @@ Game Name: Cupcakes & Cats
 Created by Benson Liu
 Year: 2017
 
+
 ## Narrative
 
 DAVE is just your typical cat living his ordinary life until suddenly he is transported to the fantasy world of CANDY LAND. In CANDY LAND, the world is continuously showered by rains of CUPCAKES that destroy the land. The people of CANDY LAND turn to the new arrival of DAVE to try and save them. Can you help DAVE catch all of the CUPCAKES before they destroy all of CANDY LAND?
 
 
 ## Gameplay
-[update directions]
+The goal of Cupcakes & Cats is to ensure that Dave catches all of the falling cupcakes before they hit the ground. Using either your LEFT and RIGHT arrow keys or your mouse/cursor, you can move the position of Dave to right below the cupcake. By catching the falling cupcakes, you earn points. Be careful! For every missed/dropped cupcake, you lose a life. The game ends whenever you lose all 5 of your lives. After gaining a certain amount of points in a given level, you move up a level and regain a life (you can hold up to a maximum of 5 lives at a time). Continue to progress through each level to see the maximum number of points you can get! 
 
 
 # Playing Cupcakes & Cats
 There are currently two options that allow you to play Cupcakes & Cats.
-- **OPTION 1.** Download this repository and follow the instructions below.
-[update directions]
-- **OPTION 2.** Play the online Repl.it instance of Cupcakes & Cats.
-[update directions]
+- **OPTION 1.** Download this repository and follow the instructions below (see "Installing Cupcakes & Cats Locally").
+- **OPTION 2.** Play the online Repl.it instance of Cupcakes & Cats. Click on the Repl.it link below and click the play button to begin!
 
 Repl.it Link:
 [https://replit.com/@bliutech/CupcakesandCats](https://replit.com/@bliutech/CupcakesandCats)
@@ -33,7 +32,8 @@ Repl.it Link:
 
 
 # COPYRIGHT & LICENSE
-Cupcakes & Cats is currently not licensed and is not being used for profit. This means that the typical copyright rules apply. If you would like to use any of the art or music in this project, please reach out to the artists themselves (ev)
+Cupcakes & Cats is currently not licensed and is not being used for profit. This means that the typical copyright rules apply. If you would like to use any of the art or music in this project, please reach out to the artists themselves.
+
 
 ## Artwork Credit
 - **Images:**
@@ -58,6 +58,7 @@ Cupcakes & Cats is currently not licensed and is not being used for profit. This
         - Kitten_Meow-SoundBible.com-1295572573.wav
         - Mario-coin-sound.wav
         - Splat-SoundBible.com-1826190667.wav
+
 
 # Installing Cupcakes & Cats Locally
 If you like to run Cupcakes & Cats locally on your computer, follow these instructions.
@@ -112,6 +113,7 @@ python Cupcakes_and_Cats.py
 ```
 **STEP 4:**
 Enjoy playing Cupcakes & Cats!
+
 
 # Contact
 If there are any questions or concerns about Cupcakes & Cats, please contact the developer, Benson Liu, through email (bensonhliu@gmail.com).
